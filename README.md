@@ -55,12 +55,13 @@ stock-insight/
 │   ├── app/
 │   │   ├── api/       # API 라우터
 │   │   ├── core/      # 설정
-│   │   ├── models/    # DB 모델
+│   │   ├── models/    # DB 모델 (SQLAlchemy)
 │   │   ├── services/  # 비즈니스 로직
 │   │   │   ├── stock/ # 주가 수집
 │   │   │   ├── news/  # 뉴스 스크래핑
 │   │   │   └── ai/    # Claude API
 │   │   └── tasks/     # Celery 태스크
+│   ├── alembic/       # DB 마이그레이션
 │   ├── requirements.txt
 │   └── .env.example
 ├── docker-compose.yml # PostgreSQL + Redis
@@ -95,6 +96,7 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env       # 환경변수 설정 후
+alembic upgrade head       # DB 마이그레이션 적용
 uvicorn app.main:app --reload
 ```
 
