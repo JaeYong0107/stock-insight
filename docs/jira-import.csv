@@ -1,0 +1,795 @@
+Summary,Issue Type,Description,Labels,Labels,Labels,Priority,Work item ID,Parent
+"[EPIC] 프로젝트 기본 구조 및 DB 모델 구축",Epic,"h2. 배경
+Stock Insight 백엔드의 기본 구조를 세팅하고, MVP 핵심 도메인에 대한 SQLAlchemy 모델과 Alembic 마이그레이션을 구성한다.
+
+h2. 범위
+* FastAPI 프로젝트 구조 정리
+* DB 세션/엔진 구성
+* 핵심 모델 구현
+* 초기 마이그레이션 작성
+
+h2. 완료 기준
+* 백엔드 프로젝트 구조가 정리되어 있다.
+* 핵심 테이블 모델이 구현되어 있다.
+* Alembic 마이그레이션이 실행 가능하다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/domain-model.md
+* docs/erd.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,database,Highest,1,
+"[EPIC] 종목 마스터 및 일봉 가격 파이프라인 구축",Epic,"h2. 배경
+국내 주식 종목 마스터와 일봉 가격 데이터를 수집, 저장, 조회할 수 있는 기반을 구축한다.
+
+h2. 범위
+* 종목 마스터 수집 파이프라인
+* 일봉 가격 수집 파이프라인
+* 종목/가격 조회 API
+
+h2. 완료 기준
+* 종목 마스터 수집이 가능하다.
+* 일봉 가격 데이터 수집이 가능하다.
+* 종목/가격 조회 API가 동작한다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/pipeline.md
+* docs/api-spec.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,Highest,2,
+"[EPIC] 뉴스 수집 및 뉴스-종목 매핑 구축",Epic,"h2. 배경
+뉴스 데이터를 수집하고 관련 종목과 연결해 종목별 뉴스 조회가 가능하도록 한다.
+
+h2. 범위
+* 뉴스 수집 파이프라인
+* 뉴스-종목 매핑 로직
+* 종목 뉴스 조회 API
+
+h2. 완료 기준
+* 뉴스 수집이 가능하다.
+* 뉴스-종목 매핑이 가능하다.
+* 종목 뉴스 조회 API가 동작한다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/pipeline.md
+* docs/api-spec.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,High,3,
+"[EPIC] 뉴스 감성 분석 및 종목 인사이트 생성 구축",Epic,"h2. 배경
+수집된 뉴스와 가격 데이터를 바탕으로 감성 분석 및 종목 인사이트 생성 기능을 구축한다.
+
+h2. 범위
+* 뉴스 감성 분석 파이프라인
+* 종목 인사이트 생성 파이프라인
+* 인사이트 조회 API
+
+h2. 완료 기준
+* 뉴스 감성 분석 결과가 저장된다.
+* 종목 인사이트가 생성되고 조회 가능하다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/pipeline.md
+* docs/api-spec.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,ai,High,4,
+"[EPIC] 인사이트 사후 검증 기능 구축",Epic,"h2. 배경
+생성된 종목 인사이트를 이후 실제 가격 흐름과 비교하는 평가 기능을 구축한다.
+
+h2. 범위
+* 인사이트 평가 배치
+* 평가 결과 조회 API
+
+h2. 완료 기준
+* 평가 배치가 동작한다.
+* 평가 결과 조회 API가 제공된다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/pipeline.md
+* docs/api-spec.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,ai,Medium,5,
+"[EPIC] 이슈 기반 관심 종목 탐색 기능 구축",Epic,"h2. 배경
+최근 뉴스와 이슈를 바탕으로 관심 가져볼 만한 종목 후보를 계산하고 조회할 수 있게 한다.
+
+h2. 범위
+* 관심 종목 후보 계산 로직
+* 탐색 후보 조회 API
+
+h2. 완료 기준
+* 관심 종목 후보 계산 로직이 구현된다.
+* 탐색 후보 API가 동작한다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/pipeline.md
+* docs/api-spec.md
+* docs/product-decisions.md
+* docs/discovery-feature-proposal.md
+* docs/jira-ticket-plan.md",mvp,backend,discovery,Medium,6,
+"[STORY] 백엔드 기본 구조와 공통 인프라를 구성한다",Story,"h2. 배경
+FastAPI, 설정 로딩, DB 연결, 기본 디렉터리 구조를 정리해 이후 구현의 기반을 만든다.
+
+h2. 범위
+* FastAPI 라우터 및 디렉터리 구조 정리
+* 설정 및 환경 변수 로딩 구조 구현
+* SQLAlchemy 엔진 및 세션 구성
+
+h2. 완료 기준
+* 공통 구조가 정리되어 있다.
+* DB 연결 구성이 준비되어 있다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/domain-model.md
+* docs/claude-implementation-tasks.md
+* docs/jira-ticket-plan.md",mvp,backend,database,Highest,7,1
+"[STORY] MVP 핵심 데이터 모델과 초기 마이그레이션을 구현한다",Story,"h2. 배경
+설계 문서 기준 핵심 테이블을 SQLAlchemy와 Alembic으로 구현한다.
+
+h2. 범위
+* stocks 및 stock_price_daily 모델 구현
+* 뉴스 관련 모델 구현 (news_articles, news_article_stocks, news_sentiment_runs)
+* 인사이트 및 평가 모델 구현 (stock_insights, stock_insight_evaluations)
+* 작업 실행 이력 모델 구현 (collection_jobs, collection_runs)
+* Alembic 초기 마이그레이션 작성
+
+h2. 완료 기준
+* 핵심 모델이 구현되어 있다.
+* Alembic 마이그레이션이 적용 가능하다.
+
+h2. 참고 문서
+* docs/erd.md
+* docs/schema.md
+* docs/domain-model.md
+* docs/jira-ticket-plan.md",mvp,backend,database,Highest,8,1
+"[STORY] 국내 종목 마스터 수집 파이프라인을 구현한다",Story,"h2. 배경
+KOSPI/KOSDAQ 일반 주식 종목 마스터를 수집하고 최신 상태로 유지한다.
+
+h2. 범위
+* 종목 마스터 수집 서비스 구현
+* 종목 마스터 동기화 로직 구현
+* stock_master_sync 작업 및 실행 이력 기록 구현
+
+h2. 완료 기준
+* 종목 마스터 수집이 가능하다.
+* 중복 없이 최신 상태 반영이 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,Highest,9,2
+"[STORY] 일봉 가격 수집 파이프라인을 구현한다",Story,"h2. 배경
+활성 종목의 일봉 가격을 수집하고 저장한다.
+
+h2. 범위
+* 일봉 가격 수집 서비스 구현
+* 일봉 가격 upsert 로직 구현
+* daily_price_sync 작업 및 실행 이력 기록 구현
+
+h2. 완료 기준
+* 가격 수집이 가능하다.
+* 중복 없이 저장된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,Highest,10,2
+"[STORY] 종목 및 가격 조회 API를 구현한다",Story,"h2. 배경
+종목 검색과 가격 조회 API를 제공한다.
+
+h2. 범위
+* GET /stocks/search 구현
+* GET /stocks/{stock_id} 구현
+* GET /stocks/{stock_id}/prices 구현
+
+h2. 완료 기준
+* 종목 검색이 가능하다.
+* 종목 기본 정보 조회가 가능하다.
+* 가격 조회가 가능하다.
+
+h2. 참고 문서
+* docs/api-spec.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,api,High,11,2
+"[STORY] 뉴스 수집 파이프라인을 구현한다",Story,"h2. 배경
+뉴스 기사 데이터를 수집하고 중복 없이 저장한다.
+
+h2. 범위
+* 뉴스 수집 서비스 구현
+* 뉴스 저장 및 중복 방지 로직 구현
+* news_sync 작업 및 실행 이력 기록 구현
+
+h2. 완료 기준
+* 뉴스 수집이 가능하다.
+* URL 기준 중복 방지가 된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,High,12,3
+"[STORY] 뉴스와 종목의 연결 로직을 구현한다",Story,"h2. 배경
+뉴스 기사를 관련 종목과 연결한다.
+
+h2. 범위
+* 규칙 기반 뉴스-종목 매핑 구현
+* mapping_method 기록 구현
+* news_stock_mapping 작업 구현
+
+h2. 완료 기준
+* 뉴스-종목 매핑이 가능하다.
+* 중복 연결이 방지된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,High,13,3
+"[STORY] 종목 뉴스 조회 API를 구현한다",Story,"h2. 배경
+종목 상세 화면에서 사용할 뉴스 목록 조회 API를 제공한다.
+
+h2. 범위
+* GET /stocks/{stock_id}/news 구현
+
+h2. 완료 기준
+* 종목 뉴스 목록을 최신순으로 조회할 수 있다.
+
+h2. 참고 문서
+* docs/api-spec.md
+* docs/jira-ticket-plan.md",mvp,backend,api,High,14,3
+"[STORY] 뉴스 감성 분석 파이프라인을 구현한다",Story,"h2. 배경
+뉴스 기사에 대한 감성 분석 결과를 생성하고 이력으로 저장한다.
+
+h2. 범위
+* 감성 분석 provider 인터페이스 구현
+* 뉴스 감성 분석 작업 구현
+* 종목 뉴스 조회에 최신 감성 결과 반영
+
+h2. 완료 기준
+* 감성 분석 결과가 저장된다.
+* 최신 결과 조회가 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,ai,High,15,4
+"[STORY] 종목 인사이트 생성 파이프라인을 구현한다",Story,"h2. 배경
+가격과 뉴스 데이터를 바탕으로 종목 인사이트를 생성한다.
+
+h2. 범위
+* 종목 인사이트 생성 서비스 구현
+* stock_insight_generation 작업 구현
+* GET /stocks/{stock_id}/insights/latest 구현
+* GET /stocks/{stock_id}/insights 구현
+
+h2. 완료 기준
+* 인사이트가 스냅샷으로 저장된다.
+* 최신 및 이력 조회가 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/api-spec.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,ai,High,16,4
+"[STORY] 인사이트 사후 평가 배치를 구현한다",Story,"h2. 배경
+과거 인사이트를 이후 가격 흐름과 비교하는 평가 로직을 구현한다.
+
+h2. 범위
+* 인사이트 평가 계산 로직 구현
+* insight_evaluation 배치 구현
+* 평가 결과 중복 방지 저장 구현
+
+h2. 완료 기준
+* 7/30/90/180일 평가가 저장된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,ai,Medium,17,5
+"[STORY] 인사이트 평가 조회 API를 구현한다",Story,"h2. 배경
+인사이트 사후 평가 결과를 조회할 수 있게 한다.
+
+h2. 범위
+* GET /insights/{insight_id}/evaluations 구현
+
+h2. 완료 기준
+* 평가 결과 조회 API가 동작한다.
+
+h2. 참고 문서
+* docs/api-spec.md
+* docs/jira-ticket-plan.md",mvp,backend,api,Medium,18,5
+"[STORY] 관심 종목 탐색 후보 계산 로직을 구현한다",Story,"h2. 배경
+최근 뉴스와 가격 변화를 바탕으로 관심 종목 후보를 계산한다.
+
+h2. 범위
+* 뉴스 기반 후보 집계 쿼리 구현
+* 가격 변화율 및 감성 요약 결합 로직 구현
+* reason_summary 생성 규칙 구현
+
+h2. 완료 기준
+* 탐색 후보 계산이 가능하다.
+* 이유 요약이 생성된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/discovery-feature-proposal.md
+* docs/product-decisions.md
+* docs/jira-ticket-plan.md",mvp,backend,discovery,Medium,19,6
+"[STORY] 관심 종목 탐색 API를 구현한다",Story,"h2. 배경
+관심 종목 후보를 조회하는 API를 제공한다.
+
+h2. 범위
+* GET /discovery/candidates 구현
+
+h2. 완료 기준
+* 탐색 후보 API가 동작한다.
+
+h2. 참고 문서
+* docs/api-spec.md
+* docs/discovery-feature-proposal.md
+* docs/jira-ticket-plan.md",mvp,backend,discovery,Medium,20,6
+"[TASK] FastAPI 라우터 및 디렉터리 구조 정리",Task,"h2. 배경
+백엔드 프로젝트의 기본 디렉터리 구조를 확립하여 이후 개발의 일관성을 확보한다.
+
+h2. 범위
+* api, schemas, models, services, repositories, tasks 구조를 정리한다.
+
+h2. 완료 기준
+* 각 디렉터리와 기본 모듈 구조가 생성되어 있다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/claude-implementation-tasks.md",mvp,backend,,Highest,21,7
+"[TASK] 설정 및 환경 변수 로딩 구조 구현",Task,"h2. 배경
+애플리케이션 설정을 일관되게 관리하기 위한 구조를 만든다.
+
+h2. 범위
+* Pydantic settings 기반으로 환경 변수 로딩 구조를 정리한다.
+
+h2. 완료 기준
+* DB, Redis, AI provider 설정이 일관되게 로드된다.
+
+h2. 참고 문서
+* docs/requirements.md
+* docs/claude-implementation-tasks.md",mvp,backend,,Highest,22,7
+"[TASK] SQLAlchemy 엔진 및 세션 구성",Task,"h2. 배경
+데이터베이스 연결과 세션 관리를 위한 공통 인프라를 구성한다.
+
+h2. 범위
+* async SQLAlchemy 엔진과 세션 팩토리를 구성한다.
+
+h2. 완료 기준
+* 앱 전역에서 재사용 가능한 DB 세션 구성이 준비된다.
+
+h2. 참고 문서
+* docs/schema.md
+* docs/claude-implementation-tasks.md",mvp,backend,database,Highest,23,7
+"[TASK] stocks 및 stock_price_daily 모델 구현",Task,"h2. 배경
+종목과 일봉 가격 데이터를 저장할 핵심 모델을 구현한다.
+
+h2. 범위
+* stocks 모델 구현
+* stock_price_daily 모델 구현
+
+h2. 완료 기준
+* FK, unique, index가 반영되어 있다.
+
+h2. 참고 문서
+* docs/erd.md
+* docs/schema.md",mvp,backend,database,Highest,24,8
+"[TASK] 뉴스 관련 모델 구현",Task,"h2. 배경
+뉴스 수집 및 감성 분석 데이터를 저장할 모델을 구현한다.
+
+h2. 범위
+* news_articles 모델 구현
+* news_article_stocks 모델 구현
+* news_sentiment_runs 모델 구현
+
+h2. 완료 기준
+* 뉴스-종목 연결 및 감성 이력 구조가 반영되어 있다.
+
+h2. 참고 문서
+* docs/erd.md
+* docs/schema.md",mvp,backend,database,Highest,25,8
+"[TASK] 인사이트 및 평가 모델 구현",Task,"h2. 배경
+종목 인사이트와 사후 평가 데이터를 저장할 모델을 구현한다.
+
+h2. 범위
+* stock_insights 모델 구현
+* stock_insight_evaluations 모델 구현
+
+h2. 완료 기준
+* 인사이트 스냅샷과 평가 구조가 반영되어 있다.
+
+h2. 참고 문서
+* docs/erd.md
+* docs/schema.md",mvp,backend,database,Highest,26,8
+"[TASK] 작업 실행 이력 모델 구현",Task,"h2. 배경
+배치 작업의 실행 상태와 이력을 추적하기 위한 모델을 구현한다.
+
+h2. 범위
+* collection_jobs 모델 구현
+* collection_runs 모델 구현
+
+h2. 완료 기준
+* 작업 상태 추적에 필요한 컬럼과 인덱스가 반영되어 있다.
+
+h2. 참고 문서
+* docs/erd.md
+* docs/schema.md",mvp,backend,database,Highest,27,8
+"[TASK] Alembic 초기 마이그레이션 작성",Task,"h2. 배경
+구현된 모델을 기준으로 데이터베이스 스키마를 생성할 수 있는 마이그레이션을 작성한다.
+
+h2. 범위
+* 전체 모델 기준 초기 마이그레이션 생성
+
+h2. 완료 기준
+* alembic upgrade head가 정상 수행된다.
+
+h2. 참고 문서
+* docs/schema.md
+* docs/claude-implementation-tasks.md",mvp,backend,database,Highest,28,8
+"[TASK] 종목 마스터 수집 서비스 구현",Task,"h2. 배경
+외부 소스에서 종목 마스터 데이터를 가져올 수 있는 서비스를 구현한다.
+
+h2. 범위
+* 외부 소스에서 종목 목록을 수집하는 서비스 구현
+
+h2. 완료 기준
+* 종목 데이터 파싱이 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,Highest,29,9
+"[TASK] 종목 마스터 동기화 로직 구현",Task,"h2. 배경
+수집된 종목 데이터를 기존 데이터와 동기화하여 최신 상태를 유지한다.
+
+h2. 범위
+* 신규/기존/비활성 종목을 반영하는 sync 로직 구현
+
+h2. 완료 기준
+* stocks 테이블이 최신 상태로 유지된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,pipeline,Highest,30,9
+"[TASK] stock_master_sync 작업 및 실행 이력 기록 구현",Task,"h2. 배경
+종목 마스터 동기화 작업의 실행 이력을 추적한다.
+
+h2. 범위
+* 배치 작업과 collection_runs 기록을 연결
+
+h2. 완료 기준
+* 성공/실패 실행 이력이 저장된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,pipeline,Highest,31,9
+"[TASK] 일봉 가격 수집 서비스 구현",Task,"h2. 배경
+외부 가격 소스에서 일봉 데이터를 수집할 수 있는 서비스를 구현한다.
+
+h2. 범위
+* 외부 가격 소스에서 일봉 데이터를 가져오는 서비스 구현
+
+h2. 완료 기준
+* 가격 데이터 파싱이 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,Highest,32,10
+"[TASK] 일봉 가격 upsert 로직 구현",Task,"h2. 배경
+수집된 가격 데이터를 중복 없이 저장하기 위한 upsert 로직을 구현한다.
+
+h2. 범위
+* (stock_id, trade_date) 기준 중복 방지 저장 로직 구현
+
+h2. 완료 기준
+* 중복 없이 가격 데이터가 저장된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,pipeline,Highest,33,10
+"[TASK] daily_price_sync 작업 및 실행 이력 기록 구현",Task,"h2. 배경
+일봉 가격 수집 작업의 실행 이력을 추적한다.
+
+h2. 범위
+* 배치 작업과 collection_runs 기록을 연결
+
+h2. 완료 기준
+* 종목 단위 또는 전체 단위 실행 기록이 남는다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,pipeline,Highest,34,10
+"[TASK] GET /stocks/search 구현",Task,"h2. 배경
+사용자가 종목명 또는 코드로 종목을 검색할 수 있는 API를 제공한다.
+
+h2. 범위
+* 종목명/코드 검색 API 구현
+
+h2. 완료 기준
+* query, market, pagination이 동작한다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,High,35,11
+"[TASK] GET /stocks/{stock_id} 구현",Task,"h2. 배경
+종목 상세 정보를 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 종목 기본 정보 조회 API 구현
+
+h2. 완료 기준
+* 존재하지 않는 종목에 대한 에러 처리 포함.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,High,36,11
+"[TASK] GET /stocks/{stock_id}/prices 구현",Task,"h2. 배경
+종목의 일봉 가격 이력을 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 일봉 가격 조회 API 구현
+
+h2. 완료 기준
+* 기간 필터와 limit가 동작한다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,High,37,11
+"[TASK] 뉴스 수집 서비스 구현",Task,"h2. 배경
+외부 뉴스 소스에서 기사 데이터를 수집하는 서비스를 구현한다.
+
+h2. 범위
+* RSS 또는 뉴스 소스 수집 서비스 구현
+
+h2. 완료 기준
+* 제목, 요약, URL, 출처, 발행 시각을 파싱한다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/jira-ticket-plan.md",mvp,backend,pipeline,High,38,12
+"[TASK] 뉴스 저장 및 중복 방지 로직 구현",Task,"h2. 배경
+수집된 뉴스를 중복 없이 안전하게 저장한다.
+
+h2. 범위
+* news_articles 저장 로직 구현
+
+h2. 완료 기준
+* 동일 URL 중복 저장이 발생하지 않는다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,pipeline,High,39,12
+"[TASK] news_sync 작업 및 실행 이력 기록 구현",Task,"h2. 배경
+뉴스 수집 작업의 실행 이력을 추적한다.
+
+h2. 범위
+* 수집 작업과 collection_runs를 연결
+
+h2. 완료 기준
+* 성공/실패 이력이 기록된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,pipeline,High,40,12
+"[TASK] 규칙 기반 뉴스-종목 매핑 구현",Task,"h2. 배경
+뉴스 기사를 종목과 자동으로 연결하는 규칙 기반 매핑을 구현한다.
+
+h2. 범위
+* 종목명/코드 기반 매핑 로직 구현
+
+h2. 완료 기준
+* 연결 후보가 news_article_stocks에 저장된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/product-decisions.md",mvp,backend,pipeline,High,41,13
+"[TASK] mapping_method 기록 구현",Task,"h2. 배경
+뉴스-종목 매핑 방식을 추적하기 위한 기록을 구현한다.
+
+h2. 범위
+* 매핑 방식 추적 컬럼 반영
+
+h2. 완료 기준
+* rule, search, manual, ai 중 하나로 기록 가능하다.
+
+h2. 참고 문서
+* docs/schema.md
+* docs/product-decisions.md",mvp,backend,pipeline,High,42,13
+"[TASK] news_stock_mapping 작업 구현",Task,"h2. 배경
+뉴스 수집 후 자동으로 종목 매핑을 실행하는 배치 작업을 구현한다.
+
+h2. 범위
+* 후속 배치 작업으로 매핑 실행 구현
+
+h2. 완료 기준
+* 뉴스 수집 이후 자동 실행 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md",mvp,backend,pipeline,High,43,13
+"[TASK] GET /stocks/{stock_id}/news 구현",Task,"h2. 배경
+종목 상세 화면에서 관련 뉴스를 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 종목 관련 뉴스 조회 API 구현
+
+h2. 완료 기준
+* pagination과 기간 필터가 동작한다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,High,44,14
+"[TASK] 감성 분석 provider 인터페이스 구현",Task,"h2. 배경
+AI 감성 분석 호출을 추상화하여 provider 교체가 가능한 구조를 만든다.
+
+h2. 범위
+* AI 분석 호출을 감싸는 서비스 인터페이스 구현
+
+h2. 완료 기준
+* provider 교체가 가능한 구조가 준비된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/product-decisions.md",mvp,backend,ai,High,45,15
+"[TASK] 뉴스 감성 분석 작업 구현",Task,"h2. 배경
+기사 단위의 감성 분석을 비동기 작업으로 실행한다.
+
+h2. 범위
+* 기사 단위 감성 분석을 비동기 작업으로 구현
+
+h2. 완료 기준
+* news_sentiment_runs에 결과가 저장된다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/schema.md",mvp,backend,ai,High,46,15
+"[TASK] 종목 뉴스 조회에 최신 감성 결과 반영",Task,"h2. 배경
+뉴스 조회 API 응답에 감성 분석 결과를 포함시켜 사용자 경험을 향상한다.
+
+h2. 범위
+* 뉴스 API 응답에 최신 감성 결과 포함
+
+h2. 완료 기준
+* 기사당 최신 감성 결과 1건이 응답에 포함된다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,ai,High,47,15
+"[TASK] 종목 인사이트 생성 서비스 구현",Task,"h2. 배경
+가격, 뉴스, 감성 데이터를 종합하여 종목 인사이트를 생성한다.
+
+h2. 범위
+* 가격/뉴스/감성 데이터를 모아 인사이트를 생성하는 서비스 구현
+
+h2. 완료 기준
+* 입력 범위와 기준 종가까지 함께 저장 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/product-decisions.md",mvp,backend,ai,High,48,16
+"[TASK] stock_insight_generation 작업 구현",Task,"h2. 배경
+종목별 인사이트 생성을 배치로 실행한다.
+
+h2. 범위
+* 종목별 인사이트 생성 배치 구현
+
+h2. 완료 기준
+* 선택 종목 또는 배치 실행이 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md",mvp,backend,ai,High,49,16
+"[TASK] GET /stocks/{stock_id}/insights/latest 구현",Task,"h2. 배경
+종목의 최신 인사이트를 빠르게 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 최신 인사이트 조회 API 구현
+
+h2. 완료 기준
+* 최신 1건이 반환된다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,High,50,16
+"[TASK] GET /stocks/{stock_id}/insights 구현",Task,"h2. 배경
+종목의 인사이트 이력을 시계열로 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 인사이트 이력 조회 API 구현
+
+h2. 완료 기준
+* pagination 기반 이력 조회가 가능하다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,High,51,16
+"[TASK] 인사이트 평가 계산 로직 구현",Task,"h2. 배경
+인사이트 생성 시점 대비 이후 가격 변화를 계산하는 로직을 구현한다.
+
+h2. 범위
+* 평가 구간별 가격 비교와 변화율 계산 구현
+
+h2. 완료 기준
+* 평가 결과 생성이 가능하다.
+
+h2. 참고 문서
+* docs/pipeline.md
+* docs/product-decisions.md",mvp,backend,ai,Medium,52,17
+"[TASK] insight_evaluation 배치 구현",Task,"h2. 배경
+정기적으로 인사이트를 평가하는 배치 작업을 구현한다.
+
+h2. 범위
+* 정기 평가 작업 구현
+
+h2. 완료 기준
+* 일정 주기마다 평가가 생성된다.
+
+h2. 참고 문서
+* docs/pipeline.md",mvp,backend,ai,Medium,53,17
+"[TASK] 평가 결과 중복 방지 저장 구현",Task,"h2. 배경
+동일 인사이트에 대한 동일 구간 평가가 중복 저장되지 않도록 한다.
+
+h2. 범위
+* (stock_insight_id, evaluation_window_days) 기준 저장 정책 구현
+
+h2. 완료 기준
+* 중복 저장이 발생하지 않는다.
+
+h2. 참고 문서
+* docs/schema.md",mvp,backend,ai,Medium,54,17
+"[TASK] GET /insights/{insight_id}/evaluations 구현",Task,"h2. 배경
+인사이트 평가 결과를 구간별로 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 인사이트 평가 결과 조회 API 구현
+
+h2. 완료 기준
+* 평가 구간별 결과가 반환된다.
+
+h2. 참고 문서
+* docs/api-spec.md",mvp,backend,api,Medium,55,18
+"[TASK] 뉴스 기반 후보 집계 쿼리 구현",Task,"h2. 배경
+최근 뉴스 동향을 기반으로 관심 종목 후보를 식별한다.
+
+h2. 범위
+* 최근 N일 뉴스 수와 증가량을 계산하는 로직 구현
+
+h2. 완료 기준
+* 종목별 뉴스 집계 결과가 나온다.
+
+h2. 참고 문서
+* docs/discovery-feature-proposal.md
+* docs/pipeline.md",mvp,backend,discovery,Medium,56,19
+"[TASK] 가격 변화율 및 감성 요약 결합 로직 구현",Task,"h2. 배경
+뉴스 감성과 가격 변화를 종합하여 관심 종목 후보의 근거를 마련한다.
+
+h2. 범위
+* 가격 변화와 감성 정보를 함께 조합
+
+h2. 완료 기준
+* 후보 계산 입력 데이터가 완성된다.
+
+h2. 참고 문서
+* docs/discovery-feature-proposal.md
+* docs/pipeline.md",mvp,backend,discovery,Medium,57,19
+"[TASK] reason_summary 생성 규칙 구현",Task,"h2. 배경
+관심 종목 후보에 대해 사람이 읽을 수 있는 설명 문구를 생성한다.
+
+h2. 범위
+* 블랙박스 점수가 아닌 사람이 읽을 수 있는 이유 문구 생성
+
+h2. 완료 기준
+* 후보별 설명 문구가 생성된다.
+
+h2. 참고 문서
+* docs/discovery-feature-proposal.md
+* docs/product-decisions.md",mvp,backend,discovery,Medium,58,19
+"[TASK] GET /discovery/candidates 구현",Task,"h2. 배경
+최근 이슈 기반 관심 종목 후보를 조회할 수 있는 API를 제공한다.
+
+h2. 범위
+* 최근 이슈 기반 관심 종목 후보 조회 API 구현
+
+h2. 완료 기준
+* market, window_days, limit 필터가 동작한다.
+
+h2. 참고 문서
+* docs/api-spec.md
+* docs/discovery-feature-proposal.md",mvp,backend,discovery,Medium,59,20
